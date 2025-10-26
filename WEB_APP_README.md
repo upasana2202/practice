@@ -133,7 +133,7 @@ Then access from other devices using: `http://YOUR_IP_ADDRESS:5000`
 The default canvas size is 256x256 (matching typical pix2pix training). To modify:
 
 1. Edit `web_app.py`: Change `target_size` parameter in `preprocess_sketch()`
-2. Edit `templates/index.html`: Change canvas width/height attributes
+2. Edit `app/index.html`: Change canvas width/height attributes
 
 ### Model Parameters
 
@@ -156,7 +156,7 @@ python web_app.py --input_nc 3 --output_nc 3
 - Image preprocessing and postprocessing
 - RESTful API endpoint for generation
 
-### Frontend (`templates/index.html`)
+### Frontend (`app/index.html`)
 
 - HTML5 Canvas for drawing
 - Vanilla JavaScript (no framework dependencies)
@@ -207,7 +207,7 @@ print(result)
 
 ### Modifying the UI
 
-Edit `templates/index.html` to customize:
+Edit `app/index.html` to customize:
 
 - Colors and styling (CSS section)
 - Canvas size
@@ -227,7 +227,7 @@ Built on top of [pytorch-CycleGAN-and-pix2pix](https://github.com/junyanz/pytorc
 
 ## License & Distribution
 
-This web application wrapper (`web_app.py`, `templates/`, and this documentation) can be licensed under your choice of license.
+This web application wrapper (`web_app.py`, `app/`, and this documentation) can be licensed under your choice of license.
 
 The underlying pix2pix model code (`models/`, `options/`, `util/`) is from the original repository and is licensed under the BSD 2-Clause License. See `THIRD_PARTY_LICENSES.txt` for complete license details.
 

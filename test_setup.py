@@ -55,9 +55,9 @@ def check_files():
     
     required_files = [
         'web_app.py',
-        'templates/index.html',
-        'models/pix2pix_model.py',
-        'options/test_options.py',
+        'app/index.html',
+        'pix2pix/models/pix2pix_model.py',
+        'pix2pix/options/test_options.py',
     ]
     
     missing = []

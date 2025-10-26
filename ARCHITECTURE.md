@@ -113,25 +113,27 @@
 ## File Structure
 
 ```
-
-pytorch-CycleGAN-and-pix2pix-master/
-├── web_app.py # Flask backend server
-├── templates/
-│ └── index.html # Frontend UI
-├── latest_net_G.pth # Trained model weights
-├── requirements_webapp.txt # Python dependencies
-├── WEB_APP_README.md # Documentation
-├── start_webapp.bat # Quick start script
-├── test_setup.py # Setup verification
-├── models/
-│ ├── pix2pix_model.py # Model definition
-│ └── networks.py # Network architectures
-├── options/
-│ ├── base_options.py # Base configuration
-│ └── test_options.py # Test configuration
-└── util/
-└── util.py # Utility functions
-
+draw2pix/
+├── web_app.py                   # Flask backend server
+├── app/
+│   └── index.html               # Frontend UI
+├── pretrained_models/
+│   └── *.pth                    # Trained model weights
+├── requirements_webapp.txt       # Python dependencies
+├── WEB_APP_README.md            # Documentation
+├── start_webapp.bat             # Quick start script
+├── test_setup.py                # Setup verification
+├── pix2pix/
+│   ├── models/
+│   │   ├── pix2pix_model.py     # Model definition
+│   │   └── networks.py          # Network architectures
+│   ├── options/
+│   │   ├── base_options.py      # Base configuration
+│   │   └── test_options.py      # Test configuration
+│   ├── util/
+│   │   └── util.py              # Utility functions
+│   └── data/
+│       └── __init__.py          # Data loading utilities
 ```
 
 ## Technology Stack

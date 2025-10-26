@@ -19,12 +19,16 @@ See training and test tips at: https://github.com/junyanz/pytorch-CycleGAN-and-p
 See frequently asked questions at: https://github.com/junyanz/pytorch-CycleGAN-and-pix2pix/blob/master/docs/qa.md
 """
 
+import sys
+import os
+sys.path.insert(0, os.path.join(os.path.dirname(__file__), '..'))
+
 import time
-from options.train_options import TrainOptions
-from data import create_dataset
-from models import create_model
-from util.visualizer import Visualizer
-from util.util import init_ddp, cleanup_ddp
+from pix2pix.options.train_options import TrainOptions
+from pix2pix.data import create_dataset
+from pix2pix.models import create_model
+from pix2pix.util.visualizer import Visualizer
+from pix2pix.util.util import init_ddp, cleanup_ddp
 
 
 if __name__ == "__main__":

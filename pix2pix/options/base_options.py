@@ -1,9 +1,9 @@
 import argparse
 from pathlib import Path
-from util import util
+from pix2pix.util import util
 import torch
-import models
-import data
+import pix2pix.models as models
+import pix2pix.data as data
 
 
 class BaseOptions:

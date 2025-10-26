@@ -13,11 +13,11 @@ import argparse
 import glob
 
 # Import the model infrastructure
-from models.pix2pix_model import Pix2PixModel
-from options.test_options import TestOptions
+from pix2pix.models.pix2pix_model import Pix2PixModel
+from pix2pix.options.test_options import TestOptions
 import torchvision.transforms as transforms
 
-app = Flask(__name__)
+app = Flask(__name__, template_folder='app')
 
 # Global variables to hold models
 loaded_models = {}  # Dictionary to store all loaded models
@@ -73,7 +73,7 @@ def load_single_model(model_path, input_nc=1, output_nc=3):
     model = Pix2PixModel(model_opt)
     
     # Initialize the network architecture manually
-    from models import networks
+    from pix2pix.models import networks
     model.netG = networks.init_net(model.netG, model_opt.init_type, model_opt.init_gain)
     
     # Load the trained weights directly

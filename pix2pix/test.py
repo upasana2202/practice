@@ -27,13 +27,16 @@ See training and test tips at: https://github.com/junyanz/pytorch-CycleGAN-and-p
 See frequently asked questions at: https://github.com/junyanz/pytorch-CycleGAN-and-pix2pix/blob/master/docs/qa.md
 """
 
+import sys
 import os
+sys.path.insert(0, os.path.join(os.path.dirname(__file__), '..'))
+
 from pathlib import Path
-from options.test_options import TestOptions
-from data import create_dataset
-from models import create_model
-from util.visualizer import save_images
-from util import html
+from pix2pix.options.test_options import TestOptions
+from pix2pix.data import create_dataset
+from pix2pix.models import create_model
+from pix2pix.util.visualizer import save_images
+from pix2pix.util import html
 import torch
 
 try:

@@ -16,7 +16,7 @@ import torch.utils.data
 from torch.utils.data.distributed import DistributedSampler
 import torch.distributed as dist
 import os
-from data.base_dataset import BaseDataset
+from pix2pix.data.base_dataset import BaseDataset
 
 
 def find_dataset_using_name(dataset_name):
@@ -26,7 +26,7 @@ def find_dataset_using_name(dataset_name):
     be instantiated. It has to be a subclass of BaseDataset,
     and it is case-insensitive.
     """
-    dataset_filename = "data." + dataset_name + "_dataset"
+    dataset_filename = "pix2pix.data." + dataset_name + "_dataset"
     datasetlib = importlib.import_module(dataset_filename)
 
     dataset = None

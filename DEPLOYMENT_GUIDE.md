@@ -55,7 +55,7 @@ util/
 
 ```
 web_app.py                   # Your Flask application
-templates/
+app/
 └── index.html               # Your web interface
 requirements_webapp.txt       # Dependencies
 start_webapp.bat             # Startup script (Windows)
@@ -71,13 +71,24 @@ pretrained_models/
 └── G_300e_dirtyT_L100_Lr20.pth
 ```
 
+#### 6. Frontend Files
+
+```
+app/
+└── index.html               # Web interface
+```
+
 ### Data Directory (OPTIONAL)
 
 You may need minimal parts if your code references them:
 
 ```
-data/
-└── __init__.py              # Might be imported by options/models
+pix2pix/
+├── data/
+│   └── __init__.py          # Might be imported by options/models
+├── models/                  # From original repo
+├── options/                 # From original repo
+└── util/                    # From original repo
 ```
 
 ---
@@ -93,25 +104,24 @@ your-sketch-to-photo-app/
 ├── web_app.py                       # Your wrapper
 ├── start_webapp.bat                 # Startup script
 │
-├── models/                          # From original repo
+├── pix2pix/                         # From original repo
 │   ├── __init__.py
-│   ├── base_model.py
-│   ├── pix2pix_model.py
-│   └── networks.py
+│   ├── models/
+│   │   ├── __init__.py
+│   │   ├── base_model.py
+│   │   ├── pix2pix_model.py
+│   │   └── networks.py
+│   ├── options/
+│   │   ├── __init__.py
+│   │   ├── base_options.py
+│   │   └── test_options.py
+│   ├── util/
+│   │   ├── __init__.py
+│   │   └── util.py
+│   └── data/
+│       └── __init__.py
 │
-├── options/                         # From original repo
-│   ├── __init__.py
-│   ├── base_options.py
-│   └── test_options.py
-│
-├── util/                            # From original repo
-│   ├── __init__.py
-│   └── util.py
-│
-├── data/                            # From original repo (minimal)
-│   └── __init__.py
-│
-├── templates/                       # Your frontend
+├── app/                             # Your frontend
 │   └── index.html
 │
 └── pretrained_models/               # Your trained weights
@@ -151,17 +161,17 @@ web_app.py
 
 ✅ **From original repo** (must keep BSD license notice):
 
-- `models/` directory files
-- `options/` directory files
-- `util/` directory files
-- `data/__init__.py`
+- `pix2pix/models/` directory files
+- `pix2pix/options/` directory files
+- `pix2pix/util/` directory files
+- `pix2pix/data/` directory files
 
 ### What's YOURS (can license however you want)
 
 ✅ **Your original work**:
 
 - `web_app.py` - Your Flask wrapper
-- `templates/index.html` - Your frontend
+- `app/index.html` - Your frontend
 - `WEB_APP_README.md` - Your documentation
 - `ARCHITECTURE.md` - Your documentation
 - `start_webapp.bat` - Your script
@@ -228,11 +238,9 @@ setup(
 
 ```dockerfile
 FROM python:3.11
-COPY models/ /app/models/
-COPY options/ /app/options/
-COPY util/ /app/util/
+COPY pix2pix/ /app/pix2pix/
 COPY web_app.py /app/
-COPY templates/ /app/templates/
+COPY app/ /app/app/
 COPY THIRD_PARTY_LICENSES.txt /app/
 # ... rest of your Dockerfile
 ```
@@ -343,7 +351,7 @@ Add a footer or about page:
 
 1. **Model Weights Are Yours**: Your trained `.pth` files are NOT covered by their license
 2. **Code Architecture IS Theirs**: The model/options/util code structure is BSD licensed
-3. **Your Wrapper Is Yours**: `web_app.py` and templates are your original work
+3. **Your Wrapper Is Yours**: `web_app.py` and `app/` folder are your original work
 4. **Commercial Use OK**: BSD allows commercial use with attribution
 5. **No Warranty**: Both BSD and most open licenses disclaim warranties
 
