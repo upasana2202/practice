@@ -64,10 +64,11 @@ start_webapp.bat             # Startup script (Windows)
 #### 5. Your Trained Models
 
 ```
-G_100e_cleanT_L65_Lr25.pth   # Your custom trained weights
-G_250e_cleanT_L50_Lr10.pth   # (These are NOT from the original repo)
-G_250e_cleanT_L85_Lr22.pth
-G_300e_dirtyT_L100_Lr20.pth
+pretrained_models/
+├── G_100e_cleanT_L65_Lr25.pth   # Your custom trained weights
+├── G_250e_cleanT_L50_Lr10.pth   # (These are NOT from the original repo)
+├── G_250e_cleanT_L85_Lr22.pth
+└── G_300e_dirtyT_L100_Lr20.pth
 ```
 
 ### Data Directory (OPTIONAL)
@@ -113,7 +114,7 @@ your-sketch-to-photo-app/
 ├── templates/                       # Your frontend
 │   └── index.html
 │
-└── trained_models/                  # Your trained weights
+└── pretrained_models/               # Your trained weights
     ├── G_100e_cleanT_L65_Lr25.pth
     ├── G_250e_cleanT_L50_Lr10.pth
     ├── G_250e_cleanT_L85_Lr22.pth

@@ -343,8 +343,8 @@ if __name__ == '__main__':
     import argparse
     
     parser = argparse.ArgumentParser(description='Sketch-to-Photo Web App')
-    parser.add_argument('--model_dir', type=str, default='.',
-                        help='Directory containing .pth model files (default: current directory)')
+    parser.add_argument('--model_dir', type=str, default='pretrained_models',
+                        help='Directory containing .pth model files (default: pretrained_models)')
     parser.add_argument('--input_nc', type=int, default=1,
                         help='Number of input channels (1 for grayscale sketch, 3 for RGB)')
     parser.add_argument('--output_nc', type=int, default=3,
